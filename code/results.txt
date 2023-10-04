@@ -1,0 +1,91 @@
+---------------------------
+File: poissn/poissn0.xlsx
+Estimated λ: 3.0606060606060606
+Probability no arrivals in 5 hours: 0.5285455645016436
+Probability at least one arrival in a day: 0.9531407129555857
+Mean arrivals per day: 3.0606060606060606
+Variance of arrivals per day: 3.0606060606060606
+Average total time patients assisted per day: 91.81818181818181 minutes
+Standard deviation of total time patients assisted per day: 58.42077552538149 minutes
+------------------------------------------------------
+File: poissn/poissn1.xlsx
+Estimated λ: 2.95959595959596
+Probability no arrivals in 5 hours: 0.5397860122443715
+Probability at least one arrival in a day: 0.948160141660789
+Mean arrivals per day: 2.95959595959596
+Variance of arrivals per day: 2.95959595959596
+Average total time patients assisted per day: 88.7878787878788 minutes
+Standard deviation of total time patients assisted per day: 49.59576856688743 minutes
+------------------------------------------------------
+File: poissn/poissn2.xlsx
+Estimated λ: 2.9292929292929295
+Probability no arrivals in 5 hours: 0.5432045316476779
+Probability at least one arrival in a day: 0.9465651930222421
+Mean arrivals per day: 2.9292929292929295
+Variance of arrivals per day: 2.9292929292929295
+Average total time patients assisted per day: 87.87878787878789 minutes
+Standard deviation of total time patients assisted per day: 42.48103363765921 minutes
+------------------------------------------------------
+File: poissn/poissn3.xlsx
+Estimated λ: 2.9393939393939394
+Probability no arrivals in 5 hours: 0.5420626263893266
+Probability at least one arrival in a day: 0.9471022217150479
+Mean arrivals per day: 2.9393939393939394
+Variance of arrivals per day: 2.9393939393939394
+Average total time patients assisted per day: 88.18181818181819 minutes
+Standard deviation of total time patients assisted per day: 54.179664013159496 minutes
+------------------------------------------------------
+File: poissn/poissn4.xlsx
+Estimated λ: 3.111111111111111
+Probability no arrivals in 5 hours: 0.5230134238924947
+Probability at least one arrival in a day: 0.9554485737555103
+Mean arrivals per day: 3.111111111111111
+Variance of arrivals per day: 3.111111111111111
+Average total time patients assisted per day: 93.33333333333333 minutes
+Standard deviation of total time patients assisted per day: 47.50939756661683 minutes
+------------------------------------------------------
+File: poissn/poissn5.xlsx
+Estimated λ: 3.212121212121212
+Probability no arrivals in 5 hours: 0.5121222467840607
+Probability at least one arrival in a day: 0.9597289009362604
+Mean arrivals per day: 3.212121212121212
+Variance of arrivals per day: 3.212121212121212
+Average total time patients assisted per day: 96.36363636363636 minutes
+Standard deviation of total time patients assisted per day: 54.594134121895195 minutes
+------------------------------------------------------
+File: poissn/poissn6.xlsx
+Estimated λ: 3.1515151515151514
+Probability no arrivals in 5 hours: 0.5186294310282473
+Probability at least one arrival in a day: 0.9572127514352692
+Mean arrivals per day: 3.1515151515151514
+Variance of arrivals per day: 3.1515151515151514
+Average total time patients assisted per day: 94.54545454545455 minutes
+Standard deviation of total time patients assisted per day: 51.84893140954487 minutes
+------------------------------------------------------
+File: poissn/poissn7.xlsx
+Estimated λ: 3.0
+Probability no arrivals in 5 hours: 0.5352614285189903
+Probability at least one arrival in a day: 0.950212931632136
+Mean arrivals per day: 3.0
+Variance of arrivals per day: 3.0
+Average total time patients assisted per day: 90.0 minutes
+Standard deviation of total time patients assisted per day: 50.16299961736982 minutes
+------------------------------------------------------
+File: poissn/poissn8.xlsx
+Estimated λ: 3.313131313131313
+Probability no arrivals in 5 hours: 0.5014578664142734
+Probability at least one arrival in a day: 0.9635979909845847
+Mean arrivals per day: 3.313131313131313
+Variance of arrivals per day: 3.313131313131313
+Average total time patients assisted per day: 99.39393939393939 minutes
+Standard deviation of total time patients assisted per day: 52.07565496895136 minutes
+------------------------------------------------------
+File: poissn/poissn9.xlsx
+Estimated λ: 3.212121212121212
+Probability no arrivals in 5 hours: 0.5121222467840607
+Probability at least one arrival in a day: 0.9597289009362604
+Mean arrivals per day: 3.212121212121212
+Variance of arrivals per day: 3.212121212121212
+Average total time patients assisted per day: 96.36363636363636 minutes
+Standard deviation of total time patients assisted per day: 51.119199345685864 minutes
+---------------------------

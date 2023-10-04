@@ -1,0 +1,5 @@
+compiler = "pdflatex"
+proj_name = "MTH500A1"
+flags = []
+clean = true
+mode = "Output"
