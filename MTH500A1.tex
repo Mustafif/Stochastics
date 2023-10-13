@@ -1,114 +1,332 @@
+% !TeX program = xelatex
 \documentclass[11pt, letterpaper]{article}
 \title{MTH500 Assignment 1}
 \author{Mustafif Khan}
 \date{\today}
 \input{include/structure}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Lachaise Assignment
-% LaTeX Template
-% Version 1.0 (26/6/2018)
-%
-% This template originates from:
-% http://www.LaTeXTemplates.com
-%
-% Authors:
-% Marion Lachaise & François Févotte
-% Vel (vel@LaTeXTemplates.com)
-%
-% License:
-% CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
-%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-    
-\begin{document}
-\maketitle
-%----------------------------------------------------------------------------------------
-%	INTRODUCTION
-%----------------------------------------------------------------------------------------
-\section*{Introduction} % Unnumbered section
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent porttitor arcu luctus, imperdiet urna iaculis, mattis eros. Pellentesque iaculis odio vel nisl ullamcorper, nec faucibus ipsum molestie. Sed dictum nisl non aliquet porttitor. Etiam vulputate arcu dignissim, finibus sem et, viverra nisl. Aenean luctus congue massa, ut laoreet metus ornare in. Nunc fermentum nisi imperdiet lectus tincidunt vestibulum at ac elit. Nulla mattis nisl eu malesuada suscipit.
-% Math equation/formula
-\begin{equation}
-	I = \int_{a}^{b} f(x)  \; \text{d}x.
-\end{equation}
-Aliquam arcu turpis, ultrices sed luctus ac, vehicula id metus. Morbi eu feugiat velit, et tempus augue. Proin ac mattis tortor. Donec tincidunt, ante rhoncus luctus semper, arcu lorem lobortis justo, nec convallis ante quam quis lectus. Aenean tincidunt sodales massa, et hendrerit tellus mattis ac. Sed non pretium nibh. Donec cursus maximus luctus. Vivamus lobortis eros et massa porta porttitor.
-\begin{info} % Information block
-	This is an interesting piece of information, to which the reader should pay special attention. Fusce varius orci ac magna dapibus porttitor. In tempor leo a neque bibendum sollicitudin. Nulla pretium fermentum nisi, eget sodales magna facilisis eu. Praesent aliquet nulla ut bibendum lacinia. Donec vel mauris vulputate, commodo ligula ut, egestas orci. Suspendisse commodo odio sed hendrerit lobortis. Donec finibus eros erat, vel ornare enim mattis et.
-\end{info}
-%----------------------------------------------------------------------------------------
-%	PROBLEM 1
-%----------------------------------------------------------------------------------------
-\section{Problem title} % Numbered section
-In hac habitasse platea dictumst. Curabitur mattis elit sit amet justo luctus vestibulum. In hac habitasse platea dictumst. Pellentesque lobortis justo enim, a condimentum massa tempor eu. Ut quis nulla a quam pretium eleifend nec eu nisl. Nam cursus porttitor eros, sed luctus ligula convallis quis. Nam convallis, ligula in auctor euismod, ligula mauris fringilla tellus, et egestas mauris odio eget diam. Praesent sodales in ipsum eu dictum.
-%------------------------------------------------
-\subsection{Theoretical viewpoint}
-Maecenas consectetur metus at tellus finibus condimentum. Proin arcu lectus, ultrices non tincidunt et, tincidunt ut quam. Integer luctus posuere est, non maximus ante dignissim quis. Nunc a cursus erat. Curabitur suscipit nibh in tincidunt sagittis. Nam malesuada vestibulum quam id gravida. Proin ut dapibus velit. Vestibulum eget quam quis ipsum semper convallis. Duis consectetur nibh ac diam dignissim, id condimentum enim dictum. Nam aliquet ligula eu magna pellentesque, nec sagittis leo lobortis. Aenean tincidunt dignissim egestas. Morbi efficitur risus ante, id tincidunt odio pulvinar vitae.
-Curabitur tempus hendrerit nulla. Donec faucibus lobortis nibh pharetra sagittis. Sed magna sem, posuere eget sem vitae, finibus consequat libero. Cras aliquet sagittis erat ut semper. Aenean vel enim ipsum. Fusce ut felis at eros sagittis bibendum mollis lobortis libero. Donec laoreet nisl vel risus lacinia elementum non nec lacus. Nullam luctus, nulla volutpat ultricies ultrices, quam massa placerat augue, ut fringilla urna lectus nec nibh. Vestibulum efficitur condimentum orci a semper. Pellentesque ut metus pretium lacus maximus semper. Sed tellus augue, consectetur rhoncus eleifend vel, imperdiet nec turpis. Nulla ligula ante, malesuada quis orci a, ultricies blandit elit.
-% Numbered question, with subquestions in an enumerate environment
-\begin{question}
-	Quisque ullamcorper placerat ipsum. Cras nibh. Morbi vel justo vitae lacus tincidunt ultrices. Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
-	% Subquestions numbered with letters
-	\begin{enumerate}[(a)]
-		\item Do this.
-		\item Do that.
-		\item Do something else.
-	\end{enumerate}
-\end{question}
+\usepackage{pdfpages}
 
-%------------------------------------------------
-\subsection{Algorithmic issues}
-In malesuada ullamcorper urna, sed dapibus diam sollicitudin non. Donec elit odio, accumsan ac nisl a, tempor imperdiet eros. Donec porta tortor eu risus consequat, a pharetra tortor tristique. Morbi sit amet laoreet erat. Morbi et luctus diam, quis porta ipsum. Quisque libero dolor, suscipit id facilisis eget, sodales volutpat dolor. Nullam vulputate interdum aliquam. Mauris id convallis erat, ut vehicula neque. Sed auctor nibh et elit fringilla, nec ultricies dui sollicitudin. Vestibulum vestibulum luctus metus venenatis facilisis. Suspendisse iaculis augue at vehicula ornare. Sed vel eros ut velit fermentum porttitor sed sed massa. Fusce venenatis, metus a rutrum sagittis, enim ex maximus velit, id semper nisi velit eu purus.
-\begin{center}
-	\begin{minipage}{0.5\linewidth} % Adjust the minipage width to accomodate for the length of algorithm lines
-		\begin{algorithm}[H]
-			\KwIn{$(a, b)$, two floating-point numbers}  % Algorithm inputs
-			\KwResult{$(c, d)$, such that $a+b = c + d$} % Algorithm outputs/results
-			\medskip
-			\If{$\vert b\vert > \vert a\vert$}{
-				exchange $a$ and $b$ \;
-			}
-			$c \leftarrow a + b$ \;
-			$z \leftarrow c - a$ \;
-			$d \leftarrow b - z$ \;
-			{\bf return} $(c,d)$ \;
-			\caption{\texttt{FastTwoSum}} % Algorithm name
-			\label{alg:fastTwoSum}   % optional label to refer to
-		\end{algorithm}
-	\end{minipage}
-\end{center}
-Fusce varius orci ac magna dapibus porttitor. In tempor leo a neque bibendum sollicitudin. Nulla pretium fermentum nisi, eget sodales magna facilisis eu. Praesent aliquet nulla ut bibendum lacinia. Donec vel mauris vulputate, commodo ligula ut, egestas orci. Suspendisse commodo odio sed hendrerit lobortis. Donec finibus eros erat, vel ornare enim mattis et.
-% Numbered question, with an optional title
-\begin{question}[\itshape (with optional title)]
-	In congue risus leo, in gravida enim viverra id. Donec eros mauris, bibendum vel dui at, tempor commodo augue. In vel lobortis lacus. Nam ornare ullamcorper mauris vel molestie. Maecenas vehicula ornare turpis, vitae fringilla orci consectetur vel. Nam pulvinar justo nec neque egestas tristique. Donec ac dolor at libero congue varius sed vitae lectus. Donec et tristique nulla, sit amet scelerisque orci. Maecenas a vestibulum lectus, vitae gravida nulla. Proin eget volutpat orci. Morbi eu aliquet turpis. Vivamus molestie urna quis tempor tristique. Proin hendrerit sem nec tempor sollicitudin.
-\end{question}
-Mauris interdum porttitor fringilla. Proin tincidunt sodales leo at ornare. Donec tempus magna non mauris gravida luctus. Cras vitae arcu vitae mauris eleifend scelerisque. Nam sem sapien, vulputate nec felis eu, blandit convallis risus. Pellentesque sollicitudin venenatis tincidunt. In et ipsum libero. Nullam tempor ligula a massa convallis pellentesque.
-%----------------------------------------------------------------------------------------
-%	PROBLEM 2
-%----------------------------------------------------------------------------------------
-\section{Implementation}
-Proin lobortis efficitur dictum. Pellentesque vitae pharetra eros, quis dignissim magna. Sed tellus leo, semper non vestibulum vel, tincidunt eu mi. Aenean pretium ut velit sed facilisis. Ut placerat urna facilisis dolor suscipit vehicula. Ut ut auctor nunc. Nulla non massa eros. Proin rhoncus arcu odio, eu lobortis metus sollicitudin eu. Duis maximus ex dui, id bibendum diam dignissim id. Aliquam quis lorem lorem. Phasellus sagittis aliquet dolor, vulputate cursus dolor convallis vel. Suspendisse eu tellus feugiat, bibendum lectus quis, fermentum nunc. Nunc euismod condimentum magna nec bibendum. Curabitur elementum nibh eu sem cursus, eu aliquam leo rutrum. Sed bibendum augue sit amet pharetra ullamcorper. Aenean congue sit amet tortor vitae feugiat.
-In congue risus leo, in gravida enim viverra id. Donec eros mauris, bibendum vel dui at, tempor commodo augue. In vel lobortis lacus. Nam ornare ullamcorper mauris vel molestie. Maecenas vehicula ornare turpis, vitae fringilla orci consectetur vel. Nam pulvinar justo nec neque egestas tristique. Donec ac dolor at libero congue varius sed vitae lectus. Donec et tristique nulla, sit amet scelerisque orci. Maecenas a vestibulum lectus, vitae gravida nulla. Proin eget volutpat orci. Morbi eu aliquet turpis. Vivamus molestie urna quis tempor tristique. Proin hendrerit sem nec tempor sollicitudin.
-% File contents
-\begin{file}[hello.py]
-\begin{lstlisting}[language=Python]
-#! /usr/bin/python
-import sys
-sys.stdout.write("Hello World!\n")
-\end{lstlisting}
+\begin{document}
+\begin{titlepage}
+	\centering
+	\vspace*{1cm}
+	\LARGE\textbf{MTH 500 Assignment 1}
+
+	\vspace{1.5cm}
+	\Large\textbf{Mustafif Khan | 501095413 | Section 11}
+
+	\vspace{1.5cm}
+	\large\textit{Mustafif Khan is solely responsible for its content.}
+\end{titlepage}
+
+\newpage
+\section{Introduction}
+
+In this comprehensive report, I will expound on my solutions to the seven
+challenging questions in our Mathematical Statistics assignment. These
+questions delve into a broad range of topics we have studied in our course,
+including but not limited to random variables, probability distributions, time
+series, Markov chains, and Poisson processes.
+
+To tackle each question, I employed different approaches and utilized various
+tools such as MATLAB, R, Python, or Excel, performing calculations,
+simulations, estimations, comparisons, and interpretations as deemed necessary.
+
+I have included detailed supporting materials such as graphs, tables, formulas,
+and explanations whenever required to ensure that my solutions are easy to
+grasp. These materials serve to exemplify the steps taken in solving the
+problems and the reasoning behind my solutions.
+
+\section{Objectives}
+
+The main goals of this report are threefold:
+
+\subsection{Demonstrate Understanding}
+The first objective is to demonstrate my understanding of the concepts and
+methods we've learned in our Mathematical Statistics course. I aim to show how
+I've applied these concepts and methods to solve complex problems by presenting
+my solutions to the assignment questions.
+
+\subsection{Showcase Problem-Solving Skills}
+The second objective is to showcase my problem-solving skills. This involves
+using different tools and techniques to solve problems involving random
+variables, probability distributions, time series, Markov chains, and Poisson
+processes. By detailing the steps I took in solving each problem, I aim to show
+how I approached each problem and how I used the tools at my disposal.
+
+\subsection{Communicate Effectively}
+The third objective is communicating my results and reasoning effectively. This
+involves using graphs, tables, formulas, and explanations to support my
+answers. I aim to make my solutions clear and easily understood by presenting
+these supporting materials.
+
+\newpage
+
+\includepdf{q1_1}
+\includepdf{q1_2}
+\includepdf{q2_1}
+\includepdf{q2_2}
+\includepdf{q3}
+
+\newpage
+\section*{Question 4}
+\subsection*{A)}
+To simulate a moving average process with $\theta = \cfrac{k}{10}$ driven by a
+Gaussian
+white noise, I created the R code \verb|q4a.r| where defined our parameters,
+\verb|n| to define the number
+of observations which I set to $1000$, \verb|theta| which is set to $0.3$ since
+$k=3$. Lastly as defined
+in the question, we set the variable \verb|sigma| to $1$. To generate the
+Gaussian white noise, I use the
+\verb|rnorm| function which uses the normal distribution and is randomized to
+simulate the white noise. To intialize
+the moving average process, we use the \verb|rep| function which replicates
+elements of a list, we set this from $0$ to \verb|n|.
+After we create a loop to define each \verb|t| in the moving average process
+using the formula given. After
+we plot our function.
+
+\begin{file}[q4a.r]
+	\lstinputlisting[language=r]{code/q4a.r}
 \end{file}
-Fusce eleifend porttitor arcu, id accumsan elit pharetra eget. Mauris luctus velit sit amet est sodales rhoncus. Donec cursus suscipit justo, sed tristique ipsum fermentum nec. Ut tortor ex, ullamcorper varius congue in, efficitur a tellus. Vivamus ut rutrum nisi. Phasellus sit amet enim efficitur, aliquam nulla id, lacinia mauris. Quisque viverra libero ac magna maximus efficitur. Interdum et malesuada fames ac ante ipsum primis in faucibus. Vestibulum mollis eros in tellus fermentum, vitae tristique justo finibus. Sed quis vehicula nibh. Etiam nulla justo, pellentesque id sapien at, semper aliquam arcu. Integer at commodo arcu. Quisque dapibus ut lacus eget vulputate.
-% Command-line "screenshot"
-\begin{commandline}
-	\begin{verbatim}
-		$ chmod +x hello.py
-		$ ./hello.py
-		Hello World!
-	\end{verbatim}
-\end{commandline}
-Vestibulum sodales orci a nisi interdum tristique. In dictum vehicula dui, eget bibendum purus elementum eu. Pellentesque lobortis mattis mauris, non feugiat dolor vulputate a. Cras porttitor dapibus lacus at pulvinar. Praesent eu nunc et libero porttitor malesuada tempus quis massa. Aenean cursus ipsum a velit ultricies sagittis. Sed non leo ullamcorper, suscipit massa ut, pulvinar erat. Aliquam erat volutpat. Nulla non lacus vitae mi placerat tincidunt et ac diam. Aliquam tincidunt augue sem, ut vestibulum est volutpat eget. Suspendisse potenti. Integer condimentum, risus nec maximus elementum, lacus purus porta arcu, at ultrices diam nisl eget urna. Curabitur sollicitudin diam quis sollicitudin varius. Ut porta erat ornare laoreet euismod. In tincidunt purus dui, nec egestas dui convallis non. In vestibulum ipsum in dictum scelerisque.
-% Warning text, with a custom title
-\begin{warn}[Notice:]
-  In congue risus leo, in gravida enim viverra id. Donec eros mauris, bibendum vel dui at, tempor commodo augue. In vel lobortis lacus. Nam ornare ullamcorper mauris vel molestie. Maecenas vehicula ornare turpis, vitae fringilla orci consectetur vel. Nam pulvinar justo nec neque egestas tristique. Donec ac dolor at libero congue varius sed vitae lectus. Donec et tristique nulla, sit amet scelerisque orci. Maecenas a vestibulum lectus, vitae gravida nulla. Proin eget volutpat orci. Morbi eu aliquet turpis. Vivamus molestie urna quis tempor tristique. Proin hendrerit sem nec tempor sollicitudin.
-\end{warn}
-%----------------------------------------------------------------------------------------
+\begin{center}
+	\includegraphics[scale=0.47]{code/q4a}
+\end{center}
+
+\subsection*{B)}
+To simulate the moving average process with t-distribution with 4 degrees of
+freedom, we will set similar
+parameters like A), with $n=1000$, $theta = 0.3$, and $df=4$, After to generate
+the randomized t-distribution,
+we will use the \verb|rt| function with \verb|n| and \verb|df=df|. After we
+will intialize and define the moving
+average process like we had done before, and after we will plot our simulated
+values.
+
+\begin{file}[q4b.r]
+	\lstinputlisting[language=r]{code/q4b.r}
+\end{file}
+
+\begin{center}
+	\includegraphics[scale=0.47]{code/q4b}
+\end{center}
+\newpage
+\subsection*{C)}
+
+\begin{file}[q4c.r]
+	\lstinputlisting[language=r]{code/q4c.r}
+\end{file}
+
+The provided R code sets up a moving average process of order $1$ with Gaussian
+noise, calculates the empirical autocorrelation of the process at different
+lags, and plots the autocorrelation function. The
+empirical autocorrelation function is calculated as the ratio of the covariance
+between the series at time $t$ and $t + h$ and the variance of the series. The
+plot
+shows the autocorrelation values for each lag from $0$ to $10$. The term $\rho
+	X(1)$
+represents the autocorrelation of the process at lag 1, indicating how much the
+current value of the process depends on its previous value. For a moving
+average process of order $1$.
+
+\begin{center}
+	\includegraphics[scale=0.4]{code/q4c}
+\end{center}
+
+\section*{Question 5}
+
+For question 5, I solved the problem by utilizing Python classes to handle
+finding each subsection of this question
+so I can present the final answers in a complete table. To answer each
+subsection I will provide the snippet of the python
+file \verb|q5.py| that corresponds with finding the said problem. At the end
+once the code is shown, I will present the
+results in a neat table. The reason I chose to use a Python class is because
+all of the poisson files were identical,
+which means I would be able to handle the repetitive tasks effectively.
+
+\subsection*{i)}
+First we need to be able to load the data and estimate our $\lambda$ value. To
+begin in our code, we will be using the
+\verb|pandas| library to read an excel file and use the second column which
+contains the arrivals. We will need to be able
+to calculate the poisson distribution, so we will need to make use of the
+\verb|scipy| library, and lastly for better
+numerical capabilities we will be using the \verb|numpy| library.
+
+We will be creating a class called \verb|PoissonData| and to create a new
+instance of it, we will define a constructor
+which will take in a file name, we will read it use the first column which will
+be assigned to the \verb|arrivals| field,
+then we will take the mean of the arrivals and that will be our $\lambda$
+estimate and used later we will set $\mu$ to 30.
+This can all be seen below:
+
+\begin{file}[q5.py i)]
+	\lstinputlisting[linerange={1-10},language=python]{code/q5.py}
+\end{file}
+
+\subsection*{ii)}
+
+To calculate the probability of  arrivals that occur in the interval of 5
+hours, we will first calculate the rate
+which is found by $\lambda * \frac{5}{24}$ then to get the probability we use
+the Poisson PMF from $0$ to our rate.
+This is all calculated in our function \verb|no_arrivals_5_hours_prob| in the
+\verb|PoissonData| class:
+
+\begin{file}[q5.py ii)]
+	\lstinputlisting[language=python, linerange={11-14}]{code/q5.py}
+\end{file}
+
+\subsection*{iii)}
+To calculate the probability of at least one arrival occurs, we will be needing
+to find $1-Poisson(0,\lambda)$ as
+shown in the function \verb|at_least_one_arrival_prob| in the
+\verb|PoissonData| class:
+
+\begin{file}[q5.py iii)]
+	\lstinputlisting[language=python, linerange={15-18}]{code/q5.py}
+\end{file}
+
+\subsection*{iv)}
+To calculate the mean and variance of the arrival in a day, we need to remember
+that in a Poisson distribution,
+$E(X) = \lambda$ and $Var(X) = \lambda$, so in our \verb|mean_arrivals| and
+\verb|variance_arrivals| functions, we
+return our \verb|lambdaHat| field.
+
+\begin{file}[q5.py]
+	\lstinputlisting[language=python, linerange={19-24}]{code/q5.py}
+\end{file}
+
+\subsection*{v)}
+To calculate the average and standard deviation of the total time it takes
+for a patient in a single day using $\mu = 30$ is by multiplying \verb|self.mu|
+by the mean
+of arrivals and standard deviation respectively. This can be seen below:
+
+\begin{file}[q5.py]
+	\lstinputlisting[language=python, linerange={25-30}]{code/q5.py}
+\end{file}
+
+\subsection*{Results}
+To get the results for each file, I did add an extra method to turn our results
+into strings where each
+result from i)\dots v) would be rounded to 4 decimal points. I created a
+\verb|results.txt| file where each of the results
+were appended and in a \verb|for| loop all files from $0\dots 9$ were
+calculated.
+
+\begin{file}[q5.py]
+	\lstinputlisting[language=python, linerange={31-58}]{code/q5.py}
+\end{file}
+
+Instead of showing a $100$ line text file, I opted to neatly format it into a
+table where we get our
+results for each file:
+
+\begin{table}[h]
+	\centering
+	\small
+	\begin{tabular}{|l|c|c|c|c|c|c|c|}
+		\hline
+		File    & $\lambda$ & Prob. No 5 Hrs   & Prob. At Least One &
+		Mean    & Variance  & Avg. Time (mins) & Std. Dev. (mins)
+		\\
+		\hline
+		poissn0 & 3.0606    & 0.5285           & 0.9531             &
+		3.0606  & 3.0606    & 91.8182
+		        & 58.4208
+		\\
+		poissn1 & 2.9596    & 0.5398           & 0.9482             &
+		2.9596  & 2.9596    & 88.7879
+		        & 49.5958
+		\\
+		poissn2 & 2.9293    & 0.5432           & 0.9466             &
+		2.9293  & 2.9293    & 87.8788
+		        & 42.4810
+		\\
+		poissn3 & 2.9394    & 0.5421           & 0.9471             &
+		2.9394  & 2.9394    & 88.1818
+		        & 54.1797
+		\\
+		poissn4 & 3.1111    & 0.5230           & 0.9554             &
+		3.1111  & 3.1111    & 93.3333
+		        & 47.5094
+		\\
+		poissn5 & 3.2121    & 0.5121           & 0.9597             &
+		3.2121  & 3.2121    & 96.3636
+		        & 54.5941
+		\\
+		poissn6 & 3.1515    & 0.5186           & 0.9572             &
+		3.1515  & 3.1515    & 94.5455
+		        & 51.8489
+		\\
+		poissn7 & 3.0000    & 0.5353           & 0.9502             &
+		3.0000  & 3.0000    & 90.0000
+		        & 50.1630
+		\\
+		poissn8 & 3.3131    & 0.5015           & 0.9636             &
+		3.3131  & 3.3131    & 99.3939
+		        & 52.0757
+		\\
+		poissn9 & 3.2121    & 0.5121           & 0.9597             &
+		3.2121  & 3.2121    & 96.3636
+		        & 51.1192
+		\\
+		\hline
+	\end{tabular}
+	\caption{Poisson Data Results}
+\end{table}
+
+\section*{Question 6}
+The timeseries data we will be analyzing is the Apple stock price found in
+\verb|AAPL.csv|, to solve each
+part we will be using R in the file \verb|q6.r|.
+\subsection*{i)}
+To plot the Apple time series we will need to read the \verb|csv| file, get the
+daily returns from the \verb|Change| column,
+then we need to convert each of the strings into numerical numbers, we also get
+the stock prices from the \verb|Price| column.
+With the \verb|daily_returns| and \verb|prices| variables, we will create a
+dataframe with the daily returns as the x-axis
+and prices as the y-axis. Lastly we plot the prices as a scatterplot:
+
+\begin{file}[q6.r i)]
+	\lstinputlisting[language=r, linerange={1-24}]{code/q6.r}
+\end{file}
+
+\begin{figure}[h!]
+	\centering
+	\includegraphics[scale=0.55]{code/q6-1.png}
+\end{figure}
+
+\subsection*{ii)}
+To calculate the first four moments (mean, standard deviation, skewness and
+kurtosis) for the prices,
+and daily returns, we will need to use the functions \verb|mean|, \verb|sd|,
+\verb|skewness| and \verb|kurtosis|
+respectively for the variables \verb|prices| and \verb|dailyReturns| that were
+calculated previously.
+
+\begin{file}[q6.r ii)]
+	\lstinputlisting[language=r, linerange={25-45}]{code/q6.r}
+\end{file}
+
+\noindent When we run our script we get the following result:
+
+\begin{verbatim}
+Mean of prices: 120.4879 
+Standard deviation of prices: 41.64585 
+Skewness of prices: 0.5805278 
+Kurtosis of prices: 2.611525 
+
+Mean of daily returns: 0.06097975 
+Standard deviation of daily returns: 1.58414 
+Skewness of daily returns: -0.4705426 
+Kurtosis of daily returns: 8.834479 
+\end{verbatim}
+
 \end{document}

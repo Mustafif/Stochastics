@@ -39,6 +39,30 @@
 	headsep=1.2cm, % Space from the top margin to the baseline of the header
 	%showframe, % Uncomment to show how the type block is set on the page
 }
+\usepackage{xcolor}
+
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+
+\lstdefinestyle{mystyle}{
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{blue},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+	basicstyle=\ttfamily\scriptsize,
+	breakatwhitespace=false,
+    breaklines=true,
+    captionpos=b,
+    keepspaces=true,
+    showspaces=false,
+    showstringspaces=false,
+    showtabs=false,
+    tabsize=4
+}
+
+\lstset{style=mystyle}
 %----------------------------------------------------------------------------------------
 %	FONTS
 %----------------------------------------------------------------------------------------
@@ -85,23 +109,25 @@
 %	File contents, for example, with a listings environment
 % \end{file}
 \mdfdefinestyle{file}{
-	innertopmargin=1.6\baselineskip,
-	innerbottommargin=0.8\baselineskip,
-	topline=false, bottomline=false,
-	leftline=false, rightline=false,
-	leftmargin=2cm,
-	rightmargin=2cm,
-	singleextra={%
-		\draw[fill=black!10!white](P)++(0,-1.2em)rectangle(P-|O);
-		\node[anchor=north west]
-		at(P-|O){\ttfamily\mdfilename};
-		%
-		\def\l{3em}
-		\draw(O-|P)++(-\l,0)--++(\l,\l)--(P)--(P-|O)--(O)--cycle;
-		\draw(O-|P)++(-\l,0)--++(0,\l)--++(\l,0);
-	},
-	nobreak,
+    innertopmargin=0.8\baselineskip,
+    innerbottommargin=0\baselineskip,
+    topline=false,
+    bottomline=false,
+    leftline=false,
+    rightline=false,
+    leftmargin=1cm, % Adjust the left margin as needed
+    rightmargin=1cm, % Adjust the right margin as needed
+    singleextra={%
+        \draw[fill=black!10!white](P)++(0,-1.2em)rectangle(P-|O);
+        \node[anchor=north west] at (P-|O) {\ttfamily\mdfilename};
+        %
+        \def\l{4em}
+        \draw(O-|P)++(-\l,0)--++(\l,\l)--(P)--(P-|O)--(O)--cycle;
+        \draw(O-|P)++(-\l,0)--++(0,\l)--++(\l,0);
+    },
+    nobreak,
 }
+
 % Define a custom environment for file contents
 \newenvironment{file}[1][File]{ % Set the default filename to "File"
 	\medskip
