@@ -64,6 +64,24 @@ these supporting materials.
 
 \includepdf{q1_1}
 \includepdf{q1_2}
+
+\newpage
+\subsection*{D)}
+The signal $X_t$ is a stationary process both in the strict and wide sense.
+This is because:
+
+\begin{itemize}
+	\item The mean function is constant and equal to $0$ regardless of $t$.
+
+	\item The variance function is constant regardless of $t$.
+	\item The autocovariance function $\gamma (t, t+h)$ only depends on
+	      $h$, not on
+	      $t$.
+	\item The autocorrelation function $\rho (t, t+h)$ also only depends on
+	      $h$ not on
+	      $t$. It is equal to $\frac{\gamma (t, t+h)}{\sigma^2(t)}$
+\end{itemize}
+
 \includepdf{q2_1}
 \includepdf{q2_2}
 \includepdf{q3}
@@ -134,6 +152,46 @@ average process of order $1$.
 	\includegraphics[scale=0.4]{code/q4c}
 \end{center}
 
+\subsection*{D)}
+
+\begin{equation*}
+	\begin{split}
+		\mu &= 0\\
+		\sigma^2 &= 1 + \theta^2\\
+		&= 1 + (\cfrac{k}{10})^2\\
+		&= 1 + \cfrac{9}{100} \\
+		&= \cfrac{109}{100} \\
+		\rho(h) &= \cfrac{\theta}{1 + \theta^2}\\
+		&= \cfrac{9}{100} * \cfrac{100}{109}\\
+		&= \cfrac{9}{109}
+	\end{split}
+\end{equation*}
+
+\subsection*{E)}
+The moving average $X_t$ is a stationary process in the wide sense, but not in
+the strict sense.
+This is because:
+
+\begin{itemize}
+	\item The mean function is contant and equal to zero, regardless of
+	      $t$.
+	\item The variance function is contant, regardless of $t$.
+	\item The autocovariance function $\gamma (t, t+h)$ only depends on
+	      $h$, not on
+	      $t$.
+	\item The autocorrelation function $\rho (t, t+h)$ also only depends on
+	      $h$ not on
+	      $t$. It is equal to $\frac{\gamma (t, t+h)}{\sigma^2(t)}$
+\end{itemize}
+
+However, the moving average $X_t$ is not strictly stationary because the joint
+distribution of any finite number of observations changes with time. For
+example, the distribution of $(X_t, X_{t+1})$ is different from the
+distribution of
+$(X_{t+1}, X_{t+2})$, since the former has a nonzero covariance while the
+latter has a
+zero covariance.
+\newpage
 \section*{Question 5}
 
 For question 5, I solved the problem by utilizing Python classes to handle
@@ -210,6 +268,13 @@ of arrivals and standard deviation respectively. This can be seen below:
 \begin{file}[q5.py]
 	\lstinputlisting[language=python, linerange={25-30}]{code/q5.py}
 \end{file}
+\noindent P.D.F over time: 
+\begin{equation}
+	\begin{split}
+		P(y \geq x) &= f(x;k, \lambda)P(N_t = k)\\
+		&= \cfrac{\lambda^{k}x^{k-1}e^{-\lambda x}}{(k - 1)!} * e^{-\lambda^t} * \cfrac{(\lambda t)^k}{k!}
+	\end{split}
+\end{equation}
 
 \subsection*{Results}
 To get the results for each file, I did add an extra method to turn our results
@@ -280,7 +345,7 @@ results for each file:
 	\end{tabular}
 	\caption{Poisson Data Results}
 \end{table}
-
+\newpage
 \section*{Question 6}
 The timeseries data we will be analyzing is the Apple stock price found in
 \verb|AAPL.csv|, to solve each
@@ -295,13 +360,19 @@ dataframe with the daily returns as the x-axis
 and prices as the y-axis. Lastly we plot the prices as a scatterplot:
 
 \begin{file}[q6.r i)]
-	\lstinputlisting[language=r, linerange={1-24}]{code/q6.r}
+	\lstinputlisting[language=r, linerange={1-34}]{code/q6.r}
 \end{file}
 
 \begin{figure}[h!]
 	\centering
 	\includegraphics[scale=0.55]{code/q6-1.png}
 \end{figure}
+
+\begin{figure}[h!]
+	\centering
+	\includegraphics[scale=0.55]{code/q6-2.png}
+\end{figure}
+\newpage
 
 \subsection*{ii)}
 To calculate the first four moments (mean, standard deviation, skewness and
@@ -312,7 +383,7 @@ respectively for the variables \verb|prices| and \verb|dailyReturns| that were
 calculated previously.
 
 \begin{file}[q6.r ii)]
-	\lstinputlisting[language=r, linerange={25-45}]{code/q6.r}
+	\lstinputlisting[language=r, linerange={37-55}]{code/q6.r}
 \end{file}
 
 \noindent When we run our script we get the following result:
@@ -328,5 +399,150 @@ Standard deviation of daily returns: 1.58414
 Skewness of daily returns: -0.4705426 
 Kurtosis of daily returns: 8.834479 
 \end{verbatim}
+
+\subsection*{iii)}
+Lastly to plot the empirical p.d.f against the Gaussian p.d.f, we first need to
+find the kernel density
+estimate to find the empirical p.d.f using the \verb|density| function on
+\verb|dailyReturns|. After we can
+plot the kernel density estimate using \verb|plot|. To compute the Gaussian
+p.d.f, we need a sequence which
+will go from the minimum value of our \verb|dailyReturns| to the max. Next we
+use the sequence to calculate
+the p.d.f using \verb|dnorm| with our mean and standard deviation of the dail
+returns. With our
+x values and p.d.f, we can add it to the plot using \verb|lines| and a legend
+to better understand
+which p.d.f is which.
+
+\begin{file}[q6.r iii)]
+	\lstinputlisting[language=r, linerange={58-75}]{code/q6.r}
+\end{file}
+
+\begin{figure}[h!]
+	\centering
+	\includegraphics[scale=0.55]{code/q6-2.png}
+\end{figure}
+
+\section*{Question 7}
+In Question 7 I had to use Markov Chains to estimate the one-step transition
+probability matrix for the
+file \verb|mchdata3.xlsx|. This was done using Python, and begins with needing
+to use the \verb|numpy| and
+\verb|pandas| library and reading the file as shown:
+
+\begin{file}[q7.py (initialization)]
+	\lstinputlisting[language=python, linerange={1-5}]{code/q7.py}
+\end{file}
+
+Next we store all of the weather states from \verb|data| into the variable
+\verb|weather_states| by slicing
+the values from the second column and returning a list. In the problem they say
+that each weather state is represented
+as the following:
+
+\begin{itemize}
+	\item Sunny = $1$
+	\item Cloudy = $2$
+	\item Rainy = $3$
+\end{itemize}
+
+These are all declared in the variable \verb|states| as the array
+\verb|[1, 2, 3]|, with this variable
+we are able to intialize our transition matrix by creating a 3x3 matrix of
+zeros (using \verb|len(states)|).
+To calculate the transition counts we use a \verb|for| loop that iterates
+through \verb|weather_states| from
+the first element to the last. Inside of the loop, we declare the
+\verb|from_state| to be the current element in
+\verb|weather_states| and \verb|to_state| to be the next element. After we
+store the result into the \verb|transition_matrix|.
+
+After we calculate the transition counts, we need to calculate the transition
+probabilities by diving the
+transition matrix by the sum of each row in the matrix to obtain the
+probabilities. We store these
+results in a new matrix called \verb|transition_probabilities|. After we can
+print out each of the
+transition probabilities from one state to the other.
+
+\begin{file}[q7.py (rest)]
+	\lstinputlisting[language=python, linerange={7-25}]{code/q7.py}
+\end{file}
+
+When we run the code we get the following results:
+\begin{verbatim}
+	Transition Probabilities:
+	From State 1:
+	  To State 1: Probability = 0.78
+	  To State 2: Probability = 0.22
+	  To State 3: Probability = 0.00
+	From State 2:
+	  To State 1: Probability = 0.51
+	  To State 2: Probability = 0.14
+	  To State 3: Probability = 0.35
+	From State 3:
+	  To State 1: Probability = 0.00
+	  To State 2: Probability = 0.77
+	  To State 3: Probability = 0.23	
+\end{verbatim}
+
+Since we need to find the transition from state 1 to state 1, then that means
+the probability that if Friday was sunny, what is the chance Sunday is sunny is
+$78\%$.
+\newpage
+\section*{Conclusion}
+
+In this assignment, I have applied various concepts and methods of mathematical
+statistics and stochastic processes to analyze different types of data and
+problems. I have learned how to:
+
+\begin{itemize}
+	\item Identify and verify the properties of stationary processes, such
+	      as mean,
+	      variance, and autocorrelation functions. I have used these properties to
+	      determine whether a given signal or a moving average process is stationary in
+	      the strict or wide sense, and to explain the implications of stationarity for
+	      data analysis.
+	\item Calculate and interpret the joint, marginal, and conditional
+	      distributions of
+	      random variables, as well as their moments and correlation coefficients. I have
+	      used these distributions to find probabilities, expectations, and covariances
+	      of different events and variables. I have also used them to compare the
+	      dependence and independence of random variables.
+	\item Estimate the parameters of Poisson processes and exponential
+	      distributions
+	      using empirical data. I have used these parameters to model the arrival and
+	      service times of patients in an emergency hospital unit. I have also used them
+	      to find the probabilities, means, variances, and densities of different
+	      quantities related to the Poisson process.
+	\item Simulate and compare moving average processes with different types of
+	      noises,
+	      such as Gaussian and t-student. I have used R/Python to generate samples of
+	      these processes and to plot their graphs. I have also computed their empirical
+	      autocorrelation functions and compared them with their theoretical values. I
+	      have learned how different noises affect the behavior and characteristics of
+	      the moving average processes.
+	\item Select and graph a time series of daily prices and returns. I have
+	      plotted the
+	      graphs of the daily prices and returns, and computed their first four moments.
+	      I have also compared the empirical probability density function of the returns
+	      with a Gaussian density function with the same mean and standard deviation. I
+	      have evaluated the normality and autocorrelation of the time series using
+	      graphical and numerical methods.
+	\item Estimate the transition probability matrix of a Markov chain using
+	      weather
+	      data, and predict the future state of the chain. I have used the data in file
+	      \verb|mchdata3.xslx| to estimate the one-step transition probabilities between
+	      three
+	      states: sunny, cloudy, and rainy. I have used these probabilities to find the
+	      probability that Sunday is a sunny day given that Friday is a sunny day.
+\end{itemize}
+
+Through this assignment, I have improved my skills in programming, data
+analysis, and statistical inference. I have also gained a deeper understanding
+of the applications and limitations of stochastic models in real-world
+situations. I have learned how to use stochastic models to describe, explain,
+predict, and simulate various phenomena involving uncertainty and randomness.
 
 \end{document}

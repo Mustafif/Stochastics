@@ -8,19 +8,29 @@ if (!requireNamespace("moments", quietly = TRUE)) {
 library(moments)
 # Read the CSV file
 data <- read.csv("AAPL.csv")
+
 # Extract daily returns and prices
 dailyReturnStr <- data$Change
 dailyReturns <- as.numeric(sub("%", "", dailyReturnStr))
 prices <- data$Price
-# Create a data frame
-df <- data.frame(DailyReturns = dailyReturns, Prices = prices)
-# Create a boxplot
-plot(df,
-  main = "AAPL Historical Data",
-  xlab = "Daily Returns (%)",
+
+# Parse the date with the correct format
+date <- as.Date(data$Date, format = "%d-%b-%y")
+
+# Create a scatter plot
+
+plot(data.frame(Dates = date, Prices = prices),
+  main = "AAPL Prices over Time",
+  xlab = "Dates",
   ylab = "Prices ($)",
-  pch = 16, # Set the point character (16 for solid circles)
-  col = "blue" # Set point color
+  type = "l",
+)
+
+plot(data.frame(Dates = date, DailyReturns = dailyReturns),
+  main = "AAPL Daily Returns over Time",
+  xlab = "Dates",
+  ylab = "Daily Returns (%)",
+  type = "l",
 )
 # ii)
 ######################################################################
@@ -59,5 +69,7 @@ plot(kde,
 x <- seq(min(dailyReturns), max(dailyReturns))
 gaussian_pdf <- dnorm(x, mean = dr_mean, sd = dr_std)
 lines(x, gaussian_pdf, col = "blue", lty = 2)
-legend("topright", legend = c("Empirical PDF", "Gaussian PDF"),
-col = c("red", "blue"), lty = c(1, 2))
+legend("topright",
+  legend = c("Empirical PDF", "Gaussian PDF"),
+  col = c("red", "blue"), lty = c(1, 2)
+)
